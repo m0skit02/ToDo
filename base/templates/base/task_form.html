@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div class="border rounded bg-dark text-light d-flex flex-column align-items-center" style=" padding: 20px">
+        <h3>Task form</h3>
+        <a href="{% url 'tasks' %}">Go back</a>
+        <form method="POST" action="" style="padding-top: 30px">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock content %}
